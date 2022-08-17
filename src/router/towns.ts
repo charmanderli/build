@@ -15,7 +15,7 @@ import { logError } from '../Utils';
 
 export default function addTownRoutes(http: Server, app: Express): io.Server {
   //test
-  app.get('/', (req, res) => {
+  app.get('/test', (req, res) => {
     res.send('hello world');
   });
   /*
