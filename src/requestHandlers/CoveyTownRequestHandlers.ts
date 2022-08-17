@@ -254,16 +254,10 @@ function townSocketAdapter(socket: Socket): CoveyTownListener {
       socket.emit('chatMessage', message);
     },
 
-    onBoardChanged(data: any){
-      socket.emit("canvas-data", data);
-      console.log("board change");
+    onBoardChanged(data: any) {
+      socket.emit('canvas-data', data);
+      console.log('board change');
     },
-
-    onBoardClear(){
-      socket.emit("clear", "clear");
-    }
-
-
 
     onBoardClear() {
       socket.emit('clear', 'clear');
@@ -314,15 +308,9 @@ export function townSubscriptionHandler(socket: Socket): void {
     townController.updatePlayerLocation(s.player, movementData);
   });
 
-
-  socket.on("canvas-data", (data:any) => {
+  socket.on('canvas-data', (data: any) => {
     townController.onBoardChanged(data);
     // socket.broadcast.emit("canvas-data", data);
-    console.log("board change");
-  });
-
-  socket.on('clear', () => {
-    socket.broadcast.emit('clear', 'clear');
-    console.log('clear');
+    console.log('board change');
   });
 }
