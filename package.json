@@ -1,6 +1,9 @@
 {
   "name": "covey-town-townService",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.1.2"
+  },
   "description": "Backend service for processing Covey.Town town requests",
   "main": "server.js",
   "repository": {
